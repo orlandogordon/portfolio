@@ -1840,8 +1840,11 @@ a.image:hover img {
 }
 
 .headshot {
-  height: min-content !important;
-  border-radius: 20% !important;
+  height: 90% !important;
+  width: min-content !important;
+  margin: 0 auto;
+  border-radius: 80% !important;
+  border: 5px solid rgba(210, 215, 217, 0.75);
 }
 
 /* List */
