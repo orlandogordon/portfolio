@@ -8,7 +8,7 @@ export default function Skills() {
     <Section id="skills">
       <SectionHeader number="03" label="STACK & SKILLS" />
 
-      <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-[clamp(28px,4vw,56px)]">
+      <div className="grid grid-cols-1 gap-[clamp(28px,4vw,56px)] sm:grid-cols-2 lg:grid-cols-3">
         {skillsGroups.map((group, i) => (
           <Reveal key={group.label} index={i}>
             <div className="mb-5 font-mono text-xs tracking-[0.14em] text-accent">

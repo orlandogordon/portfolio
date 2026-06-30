@@ -1,4 +1,4 @@
-import { useState, type FormEvent } from "react";
+// import { useState, type FormEvent } from "react"; // re-enable with ContactForm below
 import { Section } from "./Section";
 import { SectionHeader } from "./SectionHeader";
 import { Reveal } from "./Reveal";
@@ -30,14 +30,14 @@ export default function Contact() {
     <Section id="contact">
       <SectionHeader number="05" label="CONTACT" />
 
-      <div className="grid grid-cols-1 items-start gap-[clamp(40px,6vw,90px)] md:grid-cols-2">
+      <div className="mx-auto max-w-[560px]">
         <Reveal>
-          <h2 className="m-0 mb-6 font-display text-[clamp(34px,4.5vw,60px)] font-extrabold leading-none tracking-[-0.03em]">
+          <h2 className="m-0 mb-6 text-center font-display text-[clamp(34px,4.5vw,60px)] font-extrabold leading-none tracking-[-0.03em]">
             Let's build something.
           </h2>
-          <p className="m-0 mb-[38px] max-w-[46ch] text-[clamp(15px,1.3vw,17px)] leading-[1.7] text-muted">
-            Open to full-stack roles and interesting projects. Drop a message or
-            reach me directly.
+          <p className="mx-auto m-0 mb-[38px] max-w-[46ch] text-center text-[clamp(15px,1.3vw,17px)] leading-[1.7] text-muted">
+            Open to full-stack roles and interesting projects. Reach out through
+            any of the channels below.
           </p>
           <div className="flex flex-col gap-[2px]">
             {CONTACT_LINKS.map((link, i) => (
@@ -59,14 +59,21 @@ export default function Contact() {
           </div>
         </Reveal>
 
+        {/* Contact form temporarily disabled (was a mailto: form — fragile when
+            the visitor has no default mail client). To restore: uncomment the
+            block below, the ContactForm/Field components, and the react import. */}
+        {/*
         <Reveal>
           <ContactForm />
         </Reveal>
+        */}
       </div>
     </Section>
   );
 }
 
+/* Contact form temporarily disabled — see Contact() above. Restore this block
+   and the `useState`/`FormEvent` import to bring the form back.
 function ContactForm() {
   const [status, setStatus] = useState<{ msg: string; error: boolean } | null>(
     null,
@@ -154,3 +161,4 @@ function Field({
     </label>
   );
 }
+*/

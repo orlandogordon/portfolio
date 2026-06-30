@@ -2,7 +2,7 @@ import { Section } from "./Section";
 import { SectionHeader } from "./SectionHeader";
 import { Reveal } from "./Reveal";
 import { profile } from "../data/profile";
-import headshot from "../assets/headshot.png";
+import headshot from "../assets/headshot.webp";
 
 const ABOUT_TAGS = ["Python", "TypeScript", "React", "FastAPI", "PostgreSQL"];
 
@@ -15,23 +15,22 @@ export default function About() {
         {/* Copy */}
         <Reveal>
           <h2 className="m-0 mb-7 font-display text-[clamp(28px,3.4vw,46px)] font-extrabold leading-[1.08] tracking-[-0.025em]">
-            I build complete products — from the database schema to the pixels
+            I build complete products, from the database schema to the pixels
             users touch.
           </h2>
           <p className="m-0 mb-5 max-w-[62ch] text-[clamp(15px,1.3vw,17px)] leading-[1.7] text-muted">
             My focus is data-rich applications: systems where the hard part is
             modeling messy real-world information and presenting it so people can
             actually act on it. A personal-finance app that turns raw bank
-            statements into a clear net-worth picture. A tour-booking platform
-            with payments and accounts. A sports-analytics tool for
-            expected-value analysis.
+            statements into a clear net-worth picture, and a tour-booking
+            platform with payments, accounts, and reviews.
           </p>
           <p className="m-0 max-w-[62ch] text-[clamp(15px,1.3vw,17px)] leading-[1.7] text-muted">
-            I work across the stack — <span className="text-fg">Python &amp; FastAPI</span>{" "}
+            I work across the stack: <span className="text-fg">Python &amp; FastAPI</span>{" "}
             or <span className="text-fg">Node &amp; Express</span> on the backend,
             typed <span className="text-fg">React</span> on the frontend, and{" "}
             <span className="text-fg">PostgreSQL</span> or{" "}
-            <span className="text-fg">MongoDB</span> underneath — and I care about
+            <span className="text-fg">MongoDB</span> underneath. And I care about
             the details that make software trustworthy: types, tests, and clean
             data.
           </p>

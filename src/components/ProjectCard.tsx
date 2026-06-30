@@ -25,16 +25,17 @@ export function ProjectCard({ project, index, isLast }: Props) {
           imageLeft ? "md:order-1" : "md:order-2"
         }`}
       >
-        {project.image && (
+        {project.image ? (
           <img
             src={project.image}
             alt={project.title}
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover object-[20%_center]"
           />
+        ) : (
+          <span className="absolute left-[14px] top-[14px] rounded-sm bg-[rgba(7,10,9,0.6)] px-2 py-1 font-mono text-[11px] text-dim">
+            {project.imageCaption}
+          </span>
         )}
-        <span className="absolute left-[14px] top-[14px] rounded-sm bg-[rgba(7,10,9,0.6)] px-2 py-1 font-mono text-[11px] text-dim">
-          {project.imageCaption}
-        </span>
       </div>
 
       {/* Text */}
@@ -71,15 +72,20 @@ export function ProjectCard({ project, index, isLast }: Props) {
               Live ↗
             </a>
           )}
-          <a
-            href={project.sourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            data-cursor
-            className="text-fg no-underline transition-colors duration-200 hover:text-accent"
-          >
-            Source ↗
-          </a>
+          {(project.sources ?? [{ label: "Source", url: project.sourceUrl }]).map(
+            (src) => (
+              <a
+                key={src.url}
+                href={src.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cursor
+                className="text-fg no-underline transition-colors duration-200 hover:text-accent"
+              >
+                {src.label} ↗
+              </a>
+            ),
+          )}
         </div>
       </div>
     </Reveal>

@@ -1,5 +1,7 @@
 import type { Project } from "./types";
-import wanderNA from "../assets/wander-na.png";
+import pocketWatcher from "../assets/pocket-watcher.webp";
+import wanderNA from "../assets/wander-na.webp";
+import evoGym from "../assets/evo-gym.webp";
 
 export const projects: Project[] = [
   {
@@ -7,13 +9,15 @@ export const projects: Project[] = [
     category: "FINTECH · FULL-STACK",
     title: "Pocket Watcher",
     description:
-      "A private personal-finance app. Users upload bank statements — no third-party API access required — and get rich transaction detail, AI-assisted auto-categorization, and budget & net-worth tracking over time.",
+      "A private personal-finance app. Users upload their own bank statements, with no third-party API access required, and get rich transaction detail, AI-assisted auto-categorization, and budget & net-worth tracking over time.",
     tags: ["Python", "FastAPI", "React", "TypeScript", "PostgreSQL"],
-    // TODO(content): no public link yet — add when Pocket Watcher ships.
-    liveUrl: "#",
-    sourceUrl: "https://github.com/orlandogordon",
-    imageCaption: "dashboard.png",
-    image: null,
+    liveUrl: "https://pocketwatcher.orlandogordon.com/",
+    sourceUrl: "https://github.com/orlandogordon/pocket-watcher-api",
+    sources: [
+      { label: "API", url: "https://github.com/orlandogordon/pocket-watcher-api" },
+      { label: "UI", url: "https://github.com/orlandogordon/pocket-watcher-ui" },
+    ],
+    image: pocketWatcher,
   },
   {
     number: "02",
@@ -22,23 +26,25 @@ export const projects: Project[] = [
     description:
       "An online tour-booking platform for experiences across North America. Search and browse tours, create an account with securely encrypted credentials, book through Stripe, and leave editable comments on every tour.",
     tags: ["Node", "Express", "MongoDB", "React", "TypeScript", "Stripe"],
-    // Known live URL from the previous site.
-    liveUrl: "https://wander-xggp.onrender.com/",
-    sourceUrl: "https://github.com/orlandogordon",
+    liveUrl: "https://wanderna.orlandogordon.com/",
+    sourceUrl: "https://github.com/orlandogordon/wander-na-backend",
+    sources: [
+      { label: "Frontend", url: "https://github.com/orlandogordon/wander-na-frontend" },
+      { label: "Backend", url: "https://github.com/orlandogordon/wander-na-backend" },
+    ],
     imageCaption: "tours.png",
     image: wanderNA,
   },
   {
     number: "03",
-    category: "DATA ANALYTICS",
-    title: "Sharp Shooter",
+    category: "FRONTEND · MOTION & UI",
+    title: "EvoGym",
     description:
-      "A sports data-analytics and expected-value (EV) analysis tool — surfacing the edges hidden in the numbers and turning raw sports data into actionable, probability-driven insight.",
-    tags: ["Python", "Data Analysis", "EV Modeling"],
-    // TODO(content): no public link yet.
-    liveUrl: "#",
-    sourceUrl: "https://github.com/orlandogordon",
-    imageCaption: "analysis.png",
-    image: null,
+      "A marketing site for a fictional fitness brand, built to sharpen modern styling and animation patterns with strict typing throughout. Smooth scroll-driven section reveals, a fully responsive layout, and custom graphics designed in Canva.",
+    tags: ["React", "TypeScript", "Tailwind"],
+    liveUrl: "https://main--evo-gym-nj.netlify.app/",
+    sourceUrl: "https://github.com/orlandogordon/evo-gym",
+    imageCaption: "home.png",
+    image: evoGym,
   },
 ];

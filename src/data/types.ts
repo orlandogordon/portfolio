@@ -8,9 +8,15 @@ export interface Project {
   tags: string[];
   /** Live site URL. "#" means no public link yet (placeholder). */
   liveUrl: string;
+  /** Primary source repo. Used when `sources` is not provided. */
   sourceUrl: string;
-  /** Filename caption shown on the image frame, e.g. "dashboard.png" */
-  imageCaption: string;
+  /**
+   * Optional multiple labeled source repos (e.g. split API/UI). When present,
+   * the card renders one link per entry instead of the single `Source` link.
+   */
+  sources?: { label: string; url: string }[];
+  /** Filename caption shown on the placeholder when there is no image, e.g. "dashboard.png" */
+  imageCaption?: string;
   /** Real screenshot; null keeps the hatch-pattern placeholder. */
   image: string | null;
 }
